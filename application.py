@@ -3,7 +3,6 @@ import os
 from flask import Flask,render_template,request,redirect,url_for,flash,session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-from flask_session import Session
 import requests
 from flask_debug import Debug
 
