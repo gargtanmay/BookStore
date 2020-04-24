@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+
+  {% block body %}
+<div class="row" style="padding:20px; text-align:justify;">
+  <div class="col-6 text-light">
+    {% if books %}
+        <h2>Title: {{ books.title }}</h2>
+        <h3>Author: {{ books.author }}</h3>
+        <h3>ISBN: {{ books.isbn }}</h3>
+        <h3>Rating (GoodReads) : {{ ratings}}</h3>
+      {% endif %}
+    </div>
+</div>
+
+
+  {% endblock %}

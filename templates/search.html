@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+
+  {% block body %}
+  <div class="row">
+  <div class="col-4"></div>
+  <div class="col-4">
+  <form class="form-inline my-2 my-lg-0" action="{{url_for('search')}}" method="post">
+    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Enter author/book/ISDN" aria-label="Search">
+    <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  </div>
+  <div class="col-4"></div>
+  </div>
+<div class="row" style="padding:20px">
+  <div class="col">
+    {% if books %}
+                <table class="table table-light table-striped table-bordered text-dark">
+                    <thead>
+                    <tr>
+                      <th>ID</th>
+                        <th>Title</th>
+                        <th>Authors</th>
+                        <th>Year</th>
+                        <th>ISBN</th>
+                    </tr>
+                    </thead>
+                    {% for book in books %}
+                        <tr>
+                            <td>{{ book.id }}</td>
+                            <td><a href="/search/{{book.id}}">{{ book.title }}</a></td>
+                            <td>{{ book.author }}</td>
+                            <td>{{ book.year }}</td>
+                            <td>{{ book.isbn }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+    </div>
+
+</div>
+
+
+  {% endblock %}
